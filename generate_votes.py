@@ -82,9 +82,6 @@ print(f"\n✅ Bestand '{output_filename}' is opgeslagen met {num_records} stemme
 
 
 
-import os
-import shutil
-
 # Zorg dat output directory bestaat
 output_dir = os.path.expanduser("~/EUV_TEST/euv-pipeline/repo_2_shuffle_1")
 os.makedirs(output_dir, exist_ok=True)
@@ -92,13 +89,13 @@ os.makedirs(output_dir, exist_ok=True)
 # Bestand dat je wilt opslaan
 output_file_path = os.path.join(output_dir, f"generated_votes_{country_code}.txt")
 
-# Sla dataframe eerst lokaal op in huidige map (of waar je dat nu doet)
+# Sla dataframe eerst lokaal op in huidige map
 local_filename = f"generated_votes_{country_code}.txt"
 df.to_csv(local_filename, index=False, header=False)
 
 # Kopieer het bestand naar stap 2 directory
 shutil.copy(local_filename, output_file_path)
 
-print(f"\n✅ Bestand '{local_filename}' is opgeslagen met {num_records} stemmen voor {country_code}.")
+#print(f"\n✅ Bestand '{local_filename}' is opgeslagen met {num_records} stemmen voor {country_code}.")
 print(f"📁 Bestand is gekopieerd naar repo_2_shuffle_1: {output_file_path}")
 
