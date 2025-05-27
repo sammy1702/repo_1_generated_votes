@@ -10,7 +10,7 @@ np.random.seed(50)
 random.seed(50)
 
 # Number of records per country
-num_records = 100
+num_records = 1000000
 
 # Country code and number formats
 country_mobile_formats = {
